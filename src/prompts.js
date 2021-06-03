@@ -7,5 +7,6 @@ module.exports = function () {
       message: 'Does your app have typescript support?',
       default: false,
     },
+    // TODO: add prompt about subscription setup
   ]
 }

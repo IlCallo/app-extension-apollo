@@ -10,4 +10,6 @@ module.exports = function (api) {
   } else {
     api.render('../lib/templates')
   }
+
+  // TODO: install subscriptions-transport-ws or graphql-ws
 }

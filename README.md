@@ -114,3 +114,29 @@ The following is an example using `clientA` instead of the default client:
     `, null, { clientId: 'clientA' })
     ...
 ```
+
+## Proxy queries and subscriptions
+
+TODO: show how to setup proxy to make this work locally
+
+```ts
+const quasarConfig = {
+  devServer: {
+    proxy: {
+      {
+        context: ['/graphql'],
+        changeOrigin: true,
+        target: 'https://my-remote-server.com',
+      },
+      // See https://github.com/chimurai/http-proxy-middleware/issues/112
+      {
+        context: ['/subscriptions'],
+        changeOrigin: true,
+        target: 'https://my-remote-server.com',
+        secure: false,
+        ws: true,
+      },
+    }
+  }
+}
+```
